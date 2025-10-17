@@ -31,11 +31,11 @@
   ],
   "author": "ravenastar-js",
   "license": "MIT",
+  "homepage": "https://github.com/ravenastar-js/ravc#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/ravenastar-js/ravc.git"
   },
-  "homepage": "https://ravenastar.link",
   "dependencies": {
     "boxen": "^6.2.1",
     "chalk": "^4.1.2",
