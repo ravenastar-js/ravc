@@ -1,0 +1,15 @@
+{
+  "theme": "dark",
+  "showTimestamp": true,
+  "compactMode": false,
+  "decimalPlaces": 4,
+  "autoRefresh": false,
+  "refreshInterval": 60000,
+  "animations": true,
+  "colorScheme": "vibrant",
+  "menu": {
+    "showIcons": true,
+    "showShortcuts": true,
+    "pageSize": 10
+  }
+}

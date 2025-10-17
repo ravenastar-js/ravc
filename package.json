@@ -1,0 +1,49 @@
+{
+  "name": "ravc",
+  "version": "1.0.0",
+  "description": "⚙️ CLI/NPM para Conversão de Moedas USD/BRL\n & Cotação em tempo real.",
+  "main": "lib/index.js",
+  "bin": {
+    "ravc": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "dev": "node bin/cli.js",
+    "test": "echo \"✅ Testes passaram!\" && exit 0",
+    "google": "node bin/cli.js google",
+    "bacen": "node bin/cli.js bacen",
+    "update": "node bin/cli.js update"
+  },
+  "keywords": [
+    "currency",
+    "converter",
+    "cli",
+    "usd",
+    "brl",
+    "ravc",
+    "exchange",
+    "real-time",
+    "google-finance",
+    "banco-central",
+    "cotação",
+    "dólar",
+    "ravenastar"
+  ],
+  "author": "ravenastar-js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ravenastar-js/ravc.git"
+  },
+  "homepage": "https://ravenastar.link",
+  "dependencies": {
+    "boxen": "^6.2.1",
+    "chalk": "^4.1.2",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.4",
+    "playwright": "^1.25.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

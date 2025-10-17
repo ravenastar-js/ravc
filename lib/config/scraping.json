@@ -1,0 +1,42 @@
+{
+  "sources": [
+    {
+      "name": "Google Finance",
+      "url": "https://www.google.com/finance/quote/USD-BRL",
+      "enabled": true,
+      "timeout": 15000,
+      "priority": 1,
+      "reliability": "high",
+      "type": "web",
+      "description": "🔍 Tempo real • Mais atualizado • Pode ter limitações de acesso",
+      "selectors": {
+        "price": ".YMlKec.fxKbKc",
+        "changePercent": ".JwB6zf",
+        "changeValue": ".P2Luy.Ebnabc.ZYVHBb",
+        "direction": ".NMm5M path"
+      }
+    },
+    {
+      "name": "Banco Central API",
+      "url": "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)",
+      "enabled": true,
+      "timeout": 10000,
+      "priority": 2,
+      "reliability": "high",
+      "type": "api",
+      "description": "🏛️  Oficial • Confiável • Atualização diária • Fallback seguro"
+    }
+  ],
+  "fallbackRate": 0.00,
+  "maxRetries": 2,
+  "retryDelay": 2000,
+  "cacheDuration": 300000,
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+  "browser": {
+    "headless": true,
+    "args": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
+  }
+}

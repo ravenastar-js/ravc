@@ -1,0 +1,30 @@
+{
+  "levels": {
+    "INFO": "info",
+    "SUCCESS": "success",
+    "WARN": "warn",
+    "ERROR": "error",
+    "DEBUG": "debug",
+    "UPDATE": "update",
+    "STOP":"stop",
+    "START":"start",
+    "EX":"ex"
+  },
+  "emojis": {
+    "info": "🔍",
+    "success": "✅",
+    "warn": "⚠️",
+    "error": "❌",
+    "debug": "🐛",
+    "update":"🔄",
+    "stop":"🛑",
+    "start":"🚀",
+    "ex":"👋"
+  },
+  "settings": {
+    "showTimestamp": true,
+    "timestampFormat": "pt-BR",
+    "debugEnabled": false,
+    "colorsEnabled": true
+  }
+}

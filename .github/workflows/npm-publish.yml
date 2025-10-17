@@ -1,0 +1,152 @@
+name: 🚀 RAVC - Publish to npm
+
+on:
+  push:
+    branches: [ main ]
+  release:
+    types: [ published ]
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 🛠️ Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ⎔ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org/'
+
+      - name: 📦 Install dependencies
+        run: |
+          npm install
+
+      - name: 🔧 Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: 🏷️ Get current version
+        id: current_version
+        run: |
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          echo "current_version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          echo "📋 Versão atual: $CURRENT_VERSION"
+
+      - name: 🔢 Calculate next version
+        id: next_version
+        run: |
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          echo "📦 Nome do pacote: $PACKAGE_NAME"
+          
+          # Verifica se é um release manual
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            NEW_VERSION="${{ github.event.release.tag_name }}"
+            echo "🎯 Versão do release: $NEW_VERSION"
+          else
+            # Publicação automática na main
+            if npm view $PACKAGE_NAME version > /dev/null 2>&1; then
+              LATEST_NPM=$(npm view $PACKAGE_NAME version)
+              echo "📦 Última versão no npm: $LATEST_NPM"
+              
+              # Incrementa patch version
+              IFS='.' read -ra VERSION_PARTS <<< "$LATEST_NPM"
+              MAJOR=${VERSION_PARTS[0]}
+              MINOR=${VERSION_PARTS[1]}
+              PATCH=${VERSION_PARTS[2]}
+              NEW_PATCH=$((PATCH + 1))
+              NEW_VERSION="$MAJOR.$MINOR.$NEW_PATCH"
+            else
+              # Primeira publicação
+              NEW_VERSION="${{ steps.current_version.outputs.current_version }}"
+            fi
+          fi
+          
+          echo "🎯 Nova versão: $NEW_VERSION"
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+
+      - name: 🚀 Update version in package.json
+        run: |
+          echo "🔄 Atualizando package.json para: ${{ steps.next_version.outputs.new_version }}"
+          npm version "${{ steps.next_version.outputs.new_version }}" --no-git-tag-version --allow-same-version
+          echo "✅ Versão atualizada"
+
+      - name: 📤 Publish to npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 💾 Commit and push changes
+        if: github.event_name != 'release'
+        run: |
+          if git diff --quiet package.json; then
+            echo "⚠️ Nenhuma mudança no package.json para commitar"
+          else
+            echo "💾 Comitando mudanças..."
+            git add package.json
+            git commit -m "🚀 RAVC: version ${{ steps.next_version.outputs.new_version }} [skip ci]"
+            git push origin main
+            echo "✅ Mudanças commitadas e enviadas"
+          fi
+
+      - name: 🎉 Create GitHub Release
+        if: github.event_name != 'release'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.next_version.outputs.new_version }}
+          name: "🌱 v${{ steps.next_version.outputs.new_version }}"
+          body: |
+            ## 🚀 RAVC Publicado!
+            
+            **⚙️ CLI/NPM para Conversão de Moedas USD/BRL & Cotação em tempo real.**
+
+            ---
+
+            ### 🚀 Como Usar
+
+            ```bash
+            # Instalação
+            npm install -g ravc
+
+            # Modo interativo
+            ravc
+
+            # Comandos diretos
+            ravc google    # Google Finance
+            ravc bacen     # Banco Central
+            ravc update    # Modo contínuo
+            ```
+
+            ### 📦 Funcionalidades
+
+            - 💵 Conversão em tempo real USD ↔ BRL
+            - 🌐 Múltiplas fontes (Google Finance + Banco Central)
+            - 📊 Histórico e estatísticas detalhadas
+            - 🎯 Interface interativa com menus navegáveis
+
+            ---
+
+            **🔗 Links Úteis:**
+            - 📦 [Pacote NPM](https://www.npmjs.com/package/ravc)
+            - 💻 [Repositório GitHub](https://github.com/ravenastar-js/ravc)
+            - 📖 [Documentação](https://github.com/ravenastar-js/ravc#readme)
+
+            **📋 Informações:**
+            - 📅 Versão: ${{ steps.next_version.outputs.new_version }}
+            - 🔖 Tag: v${{ steps.next_version.outputs.new_version }}
+            - ⚡ Publicação automática via GitHub Actions
+
+            ---
+
+            **✨ Desenvolvido com 💚 por [RavenaStar](https://ravenastar.link)**
+
+          draft: false
+          prerelease: false
