@@ -1,6 +1,6 @@
 {
   "name": "ravc",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "⚙️ CLI/NPM para Conversão de Moedas USD/BRL\n & Cotação em tempo real.",
   "main": "lib/index.js",
   "bin": {
