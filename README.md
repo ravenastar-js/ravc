@@ -12,7 +12,7 @@
 
 ## 🚀 RAVC
 
-> ⚙️ CLI/NPM para Conversão de Moedas USD/BRL & Cotação em tempo real.
+### ⚙️ CLI/NPM para Conversão de Moedas USD/BRL & Cotação em tempo real.
 
 [![NPM Version](https://img.shields.io/npm/v/ravc?style=for-the-badge&logo=npm&labelColor=2d7445&color=2d7445)](https://www.npmjs.com/package/ravc)
 [![Node.js](https://img.shields.io/badge/Node.js-14.0+-green?style=for-the-badge&logo=nodedotjs&color=2d7445)](https://nodejs.org)
@@ -29,32 +29,6 @@
 ## 📋 Visão Geral
 
 O **RAVC** é uma ferramenta de linha de comando (CLI) e NPM que oferece conversão de moedas e monitoramento em tempo real das cotações USD/BRL, com interface interativa e visualmente atrativa.
-
-## 🏗️ Estrutura do Projeto
-
-```
-ravc/ 🌟
-├── 📁 bin/
-│   └── 🚀 cli.js
-├── 📁 lib/
-│   ├── 📁 config/
-│   │   ├── ⚙️ app.json
-│   │   ├── 🎨 colors.js
-│   │   ├── 🔧 logger.json
-│   │   ├── 🕷️ scraping.json
-│   │   └── 🎭 ui.json
-│   ├── 📁 utils/
-│   │   ├── 📦 box.js
-│   │   ├── 📝 logger.js
-│   │   └── 📦 packageInfo.js
-│   ├── 💱 converter.js
-│   ├── 🏠 index.js
-│   ├── 🕷️ scraper.js
-│   ├── 🎨 ui.js
-│   └── 🔄 updater.js
-├── 📄 package.json
-└── 📖 README.md
-```
 
 ## 📦 Instalação Rápida
 
@@ -171,6 +145,33 @@ npm install -g ravc
 **Playwright não instalado:**
 ```bash
 npx playwright install
+```
+
+
+## 🏗️ Estrutura do Projeto
+
+```
+ravc/ 🌟
+├── 📁 bin/
+│   └── 🚀 cli.js
+├── 📁 lib/
+│   ├── 📁 config/
+│   │   ├── ⚙️ app.json
+│   │   ├── 🎨 colors.js
+│   │   ├── 🔧 logger.json
+│   │   ├── 🕷️ scraping.json
+│   │   └── 🎭 ui.json
+│   ├── 📁 utils/
+│   │   ├── 📦 box.js
+│   │   ├── 📝 logger.js
+│   │   └── 📦 packageInfo.js
+│   ├── 💱 converter.js
+│   ├── 🏠 index.js
+│   ├── 🕷️ scraper.js
+│   ├── 🎨 ui.js
+│   └── 🔄 updater.js
+├── 📄 package.json
+└── 📖 README.md
 ```
 
 ## 📄 Licença
