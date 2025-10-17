@@ -25,6 +25,16 @@
       "reliability": "high",
       "type": "api",
       "description": "🏛️  Oficial • Confiável • Atualização diária • Fallback seguro"
+    },
+    {
+      "name": "API Pública (Awesome)",
+      "url": "https://economia.awesomeapi.com.br/json/last/USD-BRL",
+      "enabled": true,
+      "timeout": 8000,
+      "priority": 3,
+      "reliability": "medium",
+      "type": "api",
+      "description": "🌐 Alternativa • JSON simples • Ideal para Termux"
     }
   ],
   "fallbackRate": 0.00,
