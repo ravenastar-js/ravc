@@ -17,6 +17,16 @@
       }
     },
     {
+      "name": "API Pública (Awesome)",
+      "url": "https://economia.awesomeapi.com.br/json/last/USD-BRL",
+      "enabled": true,
+      "timeout": 8000,
+      "priority": 1,
+      "reliability": "high",
+      "type": "api",
+      "description": "🌐 JSON Simples • Ideal Termux • Atualização em tempo real"
+    },
+    {
       "name": "Banco Central API",
       "url": "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)",
       "enabled": true,
@@ -25,19 +35,9 @@
       "reliability": "high",
       "type": "api",
       "description": "🏛️  Oficial • Confiável • Atualização diária • Fallback seguro"
-    },
-    {
-      "name": "API Pública (Awesome)",
-      "url": "https://economia.awesomeapi.com.br/json/last/USD-BRL",
-      "enabled": true,
-      "timeout": 8000,
-      "priority": 3,
-      "reliability": "medium",
-      "type": "api",
-      "description": "🌐 Alternativa • JSON simples • Ideal para Termux"
     }
   ],
-  "fallbackRate": 0.00,
+  "fallbackRate": 5.20,
   "maxRetries": 2,
   "retryDelay": 2000,
   "cacheDuration": 300000,
