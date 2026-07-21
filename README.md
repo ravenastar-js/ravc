@@ -190,12 +190,12 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 
 ---
 
-## Star History
+## 🌟 Star History
 
-<a href="https://www.star-history.com/#ravenastar-js/ravc&Date">
+<a href="https://www.star-history.com/?repos=ravenastar-js%2Fravc&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ravenastar-js/ravc&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ravenastar-js/ravc&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ravenastar-js/ravc&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ravenastar-js/ravc&type=date&theme=dark&legend=top-left&sealed_token=OdAEgVIcuM9T5E8kXzZmWN6PqX0oRDP4oXAr31EZNDC1sDHP1ycEJ0XdynH7ST5QhkCmozctstD-rRpDK1bAPkAxM8d5xhuYixPAEAyYfMDAHEMndmP8nQ" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ravenastar-js/ravc&type=date&legend=top-left&sealed_token=OdAEgVIcuM9T5E8kXzZmWN6PqX0oRDP4oXAr31EZNDC1sDHP1ycEJ0XdynH7ST5QhkCmozctstD-rRpDK1bAPkAxM8d5xhuYixPAEAyYfMDAHEMndmP8nQ" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ravenastar-js/ravc&type=date&legend=top-left&sealed_token=OdAEgVIcuM9T5E8kXzZmWN6PqX0oRDP4oXAr31EZNDC1sDHP1ycEJ0XdynH7ST5QhkCmozctstD-rRpDK1bAPkAxM8d5xhuYixPAEAyYfMDAHEMndmP8nQ" />
  </picture>
 </a>
